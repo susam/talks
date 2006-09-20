@@ -1,0 +1,18 @@
+# Ignore Vim swap files.
+*.sw?
+
+# Ignore generated files.
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.ps
+
+# Ignore created files.
+texmf/
+
+# Ignore macOS desktop services store files.
+.DS_Store
