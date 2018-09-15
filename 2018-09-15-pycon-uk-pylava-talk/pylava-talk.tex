@@ -1,0 +1,286 @@
+\documentclass{beamer}
+
+
+% PACKAGES 
+% ========
+% Do not indent paragraphs and insert blank space between paragraphs.
+\usepackage{parskip}
+
+% Commands like \textasciigrave, \textquotesingle, etc. are required by
+% listings when \lstset{upquote=true} is used. They are defined in
+% textcomp.sty.
+\usepackage{textcomp}
+
+% To enter syntax-highlighted code blocks.
+\usepackage{listings}
+
+
+% THEME
+% =====
+% Set main theme.
+\usetheme{CambridgeUS}
+
+% Set outer color theme.
+\usecolortheme{dolphin}
+
+% Set inner color theme for blocks.
+\usecolortheme{orchid}
+
+% Leave more margin from left and right side.
+\setbeamersize{
+    text margin left=1.5em,
+    text margin right=1.5em,
+}
+
+% Align the frame title with the text with additional margin.
+\setbeamertemplate{frametitle}[default][leftskip=0.5em]
+
+% Remove navigation symbols from footer.
+\setbeamertemplate{navigation symbols}{}
+
+% CambridgeUS uses infolines.sty for outer theme which in turn defines
+% footline with three color boxes for author, title, and date. We set
+% the footline to omit the color box for title and distribute the width
+% of the remaining two color boxes equally across the paper width. The
+% code below is a derivative of the \defbeamertemplate*{footline} code
+% in infolines.sty.
+\setbeamertemplate{footline}
+{%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]
+        {author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+                  {~~~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]
+        {date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \usebeamertemplate{page number in head/foot}\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+% LINKS
+% =====
+% Color links blue.
+\hypersetup{colorlinks=true,urlcolor=blue}
+
+% Use current text font for links (override default teletype font).
+\urlstyle{same}
+
+
+% CODE LISTINGS
+% =============
+% Colors for syntax highlighting.
+\definecolor{codecolor}{HTML}{000060} % dark blue
+\definecolor{commentcolor}{HTML}{586e75} % bluish gray
+\definecolor{keywordcolor}{HTML}{0000f0} % blue
+\definecolor{stringcolor}{HTML}{600000} % dark red
+\definecolor{placeholdercolor}{HTML}{006000} % dark green
+
+% Base style for code listing.
+\lstset{
+    % Use small teletype font (override default roman font).
+    basicstyle=\ttfamily\footnotesize\color{codecolor},
+    % Use natural width of characters and do not mess with alignment.
+    columns=fullflexible,
+    % Do not drop consecutive spaces.
+    keepspaces=true,
+    % Use straight quotes instead of curved quotes.
+    upquote=true,
+    % Do not show spaces in strings as visible spaces.
+    showstringspaces=false,
+    % Set colors for syntax highlighting.
+    commentstyle=\color{commentcolor},
+    keywordstyle=\color{keywordcolor},
+    stringstyle=\color{stringcolor},
+}
+
+% Plain code does not have any syntax highlighting.
+\lstnewenvironment{plaincode}{}{}
+
+% Display inline code on a gray background.
+\newcommand{\inlinecode}[1]{
+    \colorbox{black!10}{%
+        \texttt{#1}%
+    }
+}
+
+% Title page information.
+\title{From Pylama to Pylava}
+\subtitle{\vspace{2mm} Building a Community Maintained Fork of Pylama}
+\author{Susam Pal}
+\institute[PyCon UK 2018, Cardiff, UK]{
+    PyCon UK 2018, Cardiff City Hall, Cardiff, UK
+}
+\date{15 Sep 2018}
+
+
+\begin{document}
+
+% Title
+\frame{\titlepage}
+
+
+\begin{frame}
+    \frametitle{About Me}
+
+    \begin{itemize}
+        \item Security software developer working at Walmart Labs.
+        \item Developing security microservices in Python and Go.
+        \item Maintainer of Pylava on Fridays.
+    \end{itemize}
+\end{frame}
+
+
+% What is Pylama?
+\begin{frame}
+    \frametitle{What is Pylama?}
+    \begin{itemize}
+        \item Pylama is a code audit tool for Python and JavaScript.
+        \item Wraps around other popular linters and code quality tools.
+        \item Uses pycodestyle, pydocstyle, PyFlakes, McCabe, etc.
+        \item Supports Pylint and Gjslint via extension packages.
+        \item Written and maintained by Kirill Klenov since 2012.
+        \item Maintained until 2017.
+    \end{itemize}
+\end{frame}
+
+
+% Why Fork Pylava?
+\begin{frame}[fragile]
+    \frametitle{Why Fork Pylama?}
+
+    \begin{itemize}
+        \item
+        Need for maintenance updates.
+        \item
+        Python 3.6 warned that \inlinecode{async} would become a
+        keyword.
+        \item
+        In Python 3.7, \inlinecode{async} did become a reserved keyword.
+        \item
+        Pylama broke!
+    \end{itemize}
+    
+    \begin{block}{SyntaxError!}
+\begin{plaincode}
+$ pylama
+Traceback (most recent call last):
+  File "venv/bin/pylama", line 7, in <module>
+    from pylama.main import shell
+  File "venv/lib/python3.7/site-packages/pylama/main.py", line 10
+    from .async import check_async
+          ^
+SyntaxError: invalid syntax
+\end{plaincode}
+    \end{block}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Forking Pylama to Pylava}
+
+    \begin{itemize}
+        \item
+        Pull requests to fix issues were already available from
+        contributors.
+
+        \item
+        Forked Pylama to Pylava.
+
+        \item
+        Pull requests sent to Pylama were merged into Pylava.
+
+        \item
+        Pylava is now maintained as a community project.
+
+        \item
+        Forked Pylama\_pylint to Pylava\_pylint.
+
+        \item
+        Pylava\_pylint is also maintained as a community project.
+
+        \item
+        Pylama\_gjslint is not available with Pylava yet.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Use Pylava}
+    
+    \begin{itemize}
+
+    \item
+    Pylava is now available via its own PyPI entry at
+    \url{https://pypi.org/project/pylava/}.
+
+    \item
+    Install it with \inlinecode{pip} and enter the command
+    \inlinecode{pylava} to run it.
+
+\lstset{basicstyle=\ttfamily\normalsize\color{codecolor}}
+\begin{plaincode}
+$ pip install pylava
+$ pylava
+\end{plaincode}
+
+    \item No output is good.
+
+    \end{itemize}
+\end{frame}
+
+
+\lstset{basicstyle=\ttfamily\tiny\color{codecolor}}
+
+\begin{frame}[fragile]
+    \frametitle{Example Report}
+\begin{plaincode}
+~/git/pylava$ pylava
+config.py:24:80: E501 line too long (89 > 79 characters) [pycodestyle]
+config.py:123:80: E501 line too long (81 > 79 characters) [pycodestyle]
+config.py:151:80: E501 line too long (88 > 79 characters) [pycodestyle]
+core.py:14:1: C901 'run' is too complex (17) [mccabe]
+core.py:92:5: E731 do not assign a lambda expression, use a def [pycodestyle]
+core.py:95:9: E731 do not assign a lambda expression, use a def [pycodestyle]
+main.py:13:1: C901 'check_path' is too complex (11) [mccabe]
+main.py:28:80: E501 line too long (87 > 79 characters) [pycodestyle]
+main.py:38:80: E501 line too long (84 > 79 characters) [pycodestyle]
+lint/pylava_radon.py:27:80: E501 line too long (90 > 79 characters) [pycodestyle]
+lint/pylava_radon.py:28:80: E501 line too long (83 > 79 characters) [pycodestyle]
+lint/pylava_radon.py:31:1: W391 blank line at end of file [pycodestyle]
+lint/pylava_pyflakes.py:26:1: E303 too many blank lines (3) [pycodestyle]
+lint/pylava_mccabe.py:22:80: E501 line too long (89 > 79 characters) [pycodestyle]
+lint/extensions.py:38:1: E402 module level import not at top of file [pycodestyle]
+lint/pylava_pydocstyle.py:12:1: E402 module level import not at top of file [pycodestyle]
+lint/pylava_pydocstyle.py:29:80: E501 line too long (90 > 79 characters) [pycodestyle]
+lint/pylava_pycodestyle.py:2:80: E501 line too long (80 > 79 characters) [pycodestyle]
+libs/inirama.py:29:1: C901 'TryExcept 29' is too complex (12) [mccabe]
+libs/importlib.py:6:1: E302 expected 2 blank lines, found 1 [pycodestyle]
+libs/importlib.py:11:1: E0602 undefined name 'xrange' [pyflakes]
+libs/importlib.py:16:31: E127 continuation line over-indented for visual indent [pycodestyle]
+\end{plaincode}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Project URLs}
+
+    GitHub: \url{https://github.com/pylava/pylava}
+
+    Documentation: \url{https://pylavadocs.readthedocs.io/}
+
+    PyPI: \url{https://pypi.org/project/pylava/}
+\end{frame}
+
+
+\begin{frame}
+\Huge
+\centering
+
+Thank You!
+\end{frame}
+
+\end{document}
