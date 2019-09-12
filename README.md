@@ -3,6 +3,12 @@ Talks and Presentations
 
 This repository contains slides for all my talks and presentations.
 
+* **A Tour of Matplotlib: From Bar Charts to XKCD-Style Plots**\
+  PyCon UK 2019, Cardiff City Hall, Cardiff, UK (15 Sep 2019)
+  - Slides: [matplotlib-talk.pdf]
+
+[matplotlib-talk.pdf]: https://github.com/susam/talks/raw/master/2019-09-15-pycon-uk-matplotlib-talk/matplotlib-talk.pdf
+
 * **From Pylama to Pylava: Building a Community Mantained Fork of Pylama**\
   PyCon UK 2018, Cardiff City Hall, Cardiff, UK (15 Sep 2018)
   - Slides: [pylava-talk.pdf]

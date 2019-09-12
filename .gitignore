@@ -13,6 +13,7 @@
 
 # Ignore created files.
 texmf/
+venv
 
 # Ignore macOS desktop services store files.
 .DS_Store
