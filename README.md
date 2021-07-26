@@ -3,6 +3,14 @@ Talks and Presentations
 
 This repository contains slides for all my talks and presentations.
 
+* **Multi-Cloud Security Monitoring and CIS Benchmarks Evaluation at Scale**\
+  RSA Conference 2021 (17 May 2021)
+  - Slides: [multi-cloud-security.pdf]
+  - Video: https://www.youtube.com/watch?v=DB08q55EO1c
+  - Event: https://www.rsaconference.com/Library/presentation/USA/2021/multicloud-security-monitoring-and-cis-benchmarks-evaluation-at-scale
+
+[multi-cloud-security.pdf]: https://github.com/susam/talks/raw/master/2021-05-17-rsac-multi-cloud-security-talk/multi-cloud-security.pdf
+
 * **A Tour of Matplotlib: From Bar Charts to XKCD-Style Plots**\
   PyCon UK 2019, Cardiff City Hall, Cardiff, UK (15 Sep 2019)
   - Slides: [matplotlib-talk.pdf]
@@ -14,7 +22,7 @@ This repository contains slides for all my talks and presentations.
   PyCon UK 2018, Cardiff City Hall, Cardiff, UK (15 Sep 2018)
   - Slides: [pylava-talk.pdf]
   - Video: https://www.youtube.com/watch?v=Fassvd62XgQ
-  - Schedule: https://pretalx.com/pyconuk-2019/talk/JSHZBX/
+  - Event: https://pretalx.com/pyconuk-2019/talk/JSHZBX/
 
 [pylava-talk.pdf]: https://github.com/susam/talks/raw/master/2018-09-15-pycon-uk-pylava-talk/pylava-talk.pdf
 
