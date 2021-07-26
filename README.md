@@ -6,12 +6,15 @@ This repository contains slides for all my talks and presentations.
 * **A Tour of Matplotlib: From Bar Charts to XKCD-Style Plots**\
   PyCon UK 2019, Cardiff City Hall, Cardiff, UK (15 Sep 2019)
   - Slides: [matplotlib-talk.pdf]
+  - Video: https://www.youtube.com/watch?v=Q1J-_Q7Xtbw
 
 [matplotlib-talk.pdf]: https://github.com/susam/talks/raw/master/2019-09-15-pycon-uk-matplotlib-talk/matplotlib-talk.pdf
 
 * **From Pylama to Pylava: Building a Community Mantained Fork of Pylama**\
   PyCon UK 2018, Cardiff City Hall, Cardiff, UK (15 Sep 2018)
   - Slides: [pylava-talk.pdf]
+  - Video: https://www.youtube.com/watch?v=Fassvd62XgQ
+  - Schedule: https://pretalx.com/pyconuk-2019/talk/JSHZBX/
 
 [pylava-talk.pdf]: https://github.com/susam/talks/raw/master/2018-09-15-pycon-uk-pylava-talk/pylava-talk.pdf
 
@@ -24,6 +27,6 @@ This repository contains slides for all my talks and presentations.
 * **OWASP Top Ten Security Vulnerabilities**\
   OWASP Meetup, Infycity, Bangalore, India (20 Sep 2006)
   - Slides: [owasp-top-ten-talk.pdf]
-  - Video: https://youtu.be/mA8zZHszJMU
+  - Video: https://www.youtube.com/watch?v=mA8zZHszJMU
 
 [owasp-top-ten-talk.pdf]: https://github.com/susam/talks/raw/master/2006-09-20-owasp-top-ten-talk/owasp-top-ten-talk.pdf
